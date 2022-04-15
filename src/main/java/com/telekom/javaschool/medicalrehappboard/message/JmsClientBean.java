@@ -21,7 +21,7 @@ import javax.jms.TextMessage;
 @Slf4j
 @Singleton
 @Startup
-public class JmsConsumerBean {
+public class JmsClientBean {
 
     private static final String BROKER_URL = "tcp://localhost:61616";
     private static final String QUEUE_FROM = "medrehapp-queue";
@@ -68,7 +68,7 @@ public class JmsConsumerBean {
         try {
             connection.stop();
         } catch (JMSException e) {
-            log.error(e.getMessage());;
+            log.error(e.getMessage());
         }
     }
 }
